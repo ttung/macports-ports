@@ -1,0 +1,26 @@
+# $Id$
+
+PortSystem 1.0
+
+name		ccextractor
+version		0.55
+categories	multimedia
+platforms	darwin
+maintainers	css
+description	utility to extract closed-captioning from mpeg files
+long_description	This software extracts closed-captioning from   \
+        mpeg files.
+
+homepage	http://ccextractor.sourceforge.net/
+master_sites	sourceforge:${name}
+checksums	md5 9ed0fc432da2cec337f1c7800bd28819 \
+		sha1 8ae6e1d4573a50a8dbdd61938e1eb4a741e29505
+
+use_configure	no
+use_zip         yes
+distname        ${name}.${version}
+build.cmd       g++ -Dfopen64=fopen -Dopen64=open -Dlseek64=lseek -o ccextractor src/*.cpp
+build.target    
+destroot {
+         xinstall -m 755 ${worksrcpath}/ccextractor ${destroot}${prefix}/bin/ccextractor
+}
