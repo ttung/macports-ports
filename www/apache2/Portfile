@@ -146,24 +146,24 @@ post-activate {
 }
 
 variant suexec {
-        configure.args-append --enable-suexec                           \
-                              --with-suexec-bin=${prefix}/${name}/bin/suexec   \
-                              --with-suexec-uidmin=500                  \
-                              --with-suexec-gidmin=20                   \
-                              --with-suexec-safepath=${prefix}/bin:/usr/bin:/bin \
-                              --with-suexec-logfile=${prefix}/${name}/logs/suexec_log
+    configure.args-append --enable-suexec                           \
+                          --with-suexec-bin=${prefix}/${name}/bin/suexec   \
+                          --with-suexec-uidmin=500                  \
+                          --with-suexec-gidmin=20                   \
+                          --with-suexec-safepath=${prefix}/bin:/usr/bin:/bin \
+                          --with-suexec-logfile=${prefix}/${name}/logs/suexec_log
 
-        if { [variant_isset darwin] } {
-                configure.args-append --with-suexec-userdir=Sites
-        } else {
-                configure.args-append --with-suexec-userdir=public_html
-        }
+    if { ${os.platform} == "darwin" } {
+            configure.args-append --with-suexec-userdir=Sites
+    } else {
+            configure.args-append --with-suexec-userdir=public_html
+    }
 
-        if { [variant_isset darwin_8] } {
-                configure.args-append --with-suexec-caller=www
-        } else {
-                configure.args-append --with-suexec-caller=_www
-        }
+    if { ${os.major} <= 8 } {
+            configure.args-append --with-suexec-caller=www
+    } else {
+            configure.args-append --with-suexec-caller=_www
+    }
 }
 
 platform openbsd {
