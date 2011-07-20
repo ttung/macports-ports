@@ -1,0 +1,44 @@
+# $Id$
+
+PortSystem 1.0
+
+name		gpac-devel
+version		0.4.6
+categories	multimedia
+platforms	darwin
+maintainers	nobody
+description	multimedia framework for research and academic purposes
+long_description           GPAC is an Open Source multimedia framework for \
+                           research and academic purposes. The project \
+                           covers different aspects of multimedia, with a \
+                           focus on presentation technologies (graphics, \
+                           animation and interactivity).
+
+homepage	http://gpac.sourceforge.net/
+master_sites	sourceforge:${name}
+
+fetch.type      svn
+svn.url         http://gpac.svn.sourceforge.net/svnroot/gpac/trunk/gpac
+svn.revision    3419
+
+depends_lib     port:zlib \
+                port:openssl \
+                port:libpng \
+                port:jpeg \
+                port:spidermonkey \
+                port:libsdl-devel \
+                port:ffmpeg \
+                port:faad2 \
+                port:libmad \
+                port:xvid \
+                port:libogg \
+                port:libvorbis \
+                port:libtheora \
+                port:a52dec \
+                port:openjpeg \
+
+use_configure	yes
+worksrcdir      gpac
+use_parallel_build      no
+
+destroot.destdir        DESTDIR=${destroot} mandir=share/man
