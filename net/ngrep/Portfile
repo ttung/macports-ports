@@ -35,7 +35,8 @@ patch.pre_args      -p1
 patchfiles          10_debian-build.diff \
                     10_man-fixes.diff \
                     20_setlocale.diff \
-                    40_ipv6-offsets.diff
+                    40_ipv6-offsets.diff \
+                    50_coloverflow.diff
 
 configure.args      --with-pcap-includes=${prefix}/include \
                     --mandir=${prefix}/share/man \

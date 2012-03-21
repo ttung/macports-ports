@@ -1,0 +1,11 @@
+--- a/ngrep.c.orig	2006-11-28 05:38:43.000000000 -0800
++++ b/ngrep.c	2012-03-21 00:23:47.000000000 -0700
+@@ -977,7 +977,7 @@
+ void dump_formatted(unsigned char *data, uint32_t len) {
+     if (len > 0) {
+         unsigned char *str = data;
+-             uint8_t width = show_hex ? 16 : (ws_col-5);
++            uint32_t width = show_hex ? 16 : (ws_col-5);
+                 uint32_t i = 0,
+                          j = 0;
+ 
