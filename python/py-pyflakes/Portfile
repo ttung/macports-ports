@@ -30,6 +30,10 @@ distname            pyflakes-${version}
 checksums           rmd160  15db2dec15d7c259c2b749af8bbfb3faa2132507 \
                     sha256  aa0d4dff45c0cc2214ba158d29280f8fa1129f3e87858ef825930845146337f4
 
+variant stdout {
+    patchfiles-append   reporter.py.diff
+}
+
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools
 

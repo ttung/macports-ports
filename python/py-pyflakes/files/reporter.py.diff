@@ -1,0 +1,22 @@
+--- pyflakes/reporter.py.orig	2015-08-03 14:02:34.000000000 -0700
++++ pyflakes/reporter.py	2015-08-03 14:02:50.000000000 -0700
+@@ -54,14 +54,14 @@
+         line = text.splitlines()[-1]
+         if offset is not None:
+             offset = offset - (len(text) - len(line))
+-            self._stderr.write('%s:%d:%d: %s\n' %
++            self._stdout.write('%s:%d:%d: %s\n' %
+                                (filename, lineno, offset + 1, msg))
+         else:
+-            self._stderr.write('%s:%d: %s\n' % (filename, lineno, msg))
+-        self._stderr.write(line)
+-        self._stderr.write('\n')
++            self._stdout.write('%s:%d: %s\n' % (filename, lineno, msg))
++        self._stdout.write(line)
++        self._stdout.write('\n')
+         if offset is not None:
+-            self._stderr.write(re.sub(r'\S', ' ', line[:offset]) +
++            self._stdout.write(re.sub(r'\S', ' ', line[:offset]) +
+                                "^\n")
+ 
+     def flake(self, message):
