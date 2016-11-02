@@ -7,6 +7,7 @@ PortGroup           github 1.0
 
 github.setup        bastibl gr-rds 182150b84b52899ec83f1812e88d48cc9bf4fef2
 version             20160831
+revision            1
 checksums           rmd160 6dc35bdd2fdf785e4ae320b0baebc55f9b48134f \
                     sha256 de546a39adb8c572bcddcc8ab0604496e3668f31ddd5b28ddd5045a6eb87941c
 

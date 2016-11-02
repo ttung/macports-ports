@@ -9,6 +9,7 @@ name                gr-baz
 
 github.setup        balint256 gr-baz 870de48fd824e4013650a8a6daf8c9479e7cb00d
 version             20161024
+revision            1
 checksums           rmd160 63a3784466d76d9072328a5431b95e88ae1a1aa7 \
                     sha256 2f2356a7b556e842465e2784c6a4d943ef1a95d74849e7f766dd0b04f62ee38d
 

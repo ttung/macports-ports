@@ -7,6 +7,7 @@ PortGroup           github 1.0
 
 github.setup        bistromath gr-air-modes fd277e7fb023bf3f3923095cacbbaf8e77179647
 version             20161010
+revision            1
 checksums           rmd160 6e42e39f190bf1c82055eab4d022b0d1ec5ca5fd \
                     sha256 de6bdd270ce4d3c72721007ba6fa09144193f0180cfbf627cb0346bf37f93cb6
 

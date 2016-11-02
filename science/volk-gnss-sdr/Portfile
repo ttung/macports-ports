@@ -22,6 +22,7 @@ if {${subport} eq "volk-gnss-sdr"} {
         This port is kept up with the VOLK-GNSS-SDR release, which is typically updated every few months. This version compiles against the gnss-sdr and gnuradio ports.
 
     github.setup        gnss-sdr gnss-sdr 0.0.8 v
+    revision            1
     checksums           rmd160 ee50b1eee8a806822b576e7b41960f3e169f0961 \
                         sha256 4b38041f5fdf12a167e868fc9965e2e77e47eb3f2897059cf0238fcfee4c9c49
     github.tarball_from tags
@@ -38,6 +39,7 @@ subport volk-gnss-sdr-devel {
     name                volk-gnss-sdr-devel
     github.setup        gnss-sdr gnss-sdr c8a09834ac84cfda3a94a0ee3f5eebe70f482374
     version             20160923
+    revision            1
     checksums           rmd160 c4a79f744bdc491afd2d14ce1e8a5aa988b3cc9c \
                         sha256 0f5611f71078d071c4d1971ab49efddef0f8512114566e863e4ccc65fb000c36
 
@@ -52,6 +54,7 @@ subport volk-gnss-sdr-next {
     name                volk-gnss-sdr-next
     github.setup        gnss-sdr gnss-sdr 5dede688ea3bb45e50a40ce6b400de98436f2eec
     version             20161025
+    revision            1
     checksums           rmd160 1eb0c9e5b4635c269011e250f445587974c0ef4c \
                         sha256 78989ac597208e25fedcb61dd589f79ae148eacefe0ba8128b0b34b58e742c92
 

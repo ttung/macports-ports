@@ -8,6 +8,7 @@ PortGroup           active_variants 1.1
 
 github.setup        bastibl gr-foo 209f0350f8c95228944d7c52a85017b8b7c14ab5
 version             20160807
+revision            1
 checksums           rmd160 562624b97a862212c1746870ac9f8c958afd81af \
                     sha256 60a85e8f9881417e04cd2923b5e662e60235393b339e506f2ec98c1a7da705c9
 
