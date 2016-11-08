@@ -1,5 +1,14 @@
---- src/Makefile.orig	2014-04-02 16:52:31.000000000 +0200
-+++ src/Makefile	2014-04-02 16:50:47.000000000 +0200
+--- src/Makefile.orig	2016-11-08 13:21:08.000000000 -0800
++++ src/Makefile	2016-11-08 13:21:48.000000000 -0800
+@@ -8,7 +8,7 @@
+ PLAT= none
+ 
+ CC= gcc
+-CFLAGS= -O2 -Wall $(MYCFLAGS)
++override CFLAGS += $(MYCFLAGS)
+ AR= ar rcu
+ RANLIB= ranlib
+ RM= rm -f
 @@ -22,7 +22,8 @@
  
  PLATS= aix ansi bsd freebsd generic linux macosx mingw posix solaris
@@ -42,7 +51,7 @@
  
  macosx:
 -	$(MAKE) all MYCFLAGS=-DLUA_USE_LINUX MYLIBS="-lreadline"
-+	$(MAKE) all MYCFLAGS="-fno-common -DLUA_USE_LINUX" MYLIBS="-lreadline"
++	$(MAKE) all MYCFLAGS="-fno-common -DLUA_USE_LINUX" MYLIBS="-lreadline -ldl"
  # use this on Mac OS X 10.3-
  #	$(MAKE) all MYCFLAGS=-DLUA_USE_MACOSX
  
