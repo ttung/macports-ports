@@ -1,0 +1,39 @@
+diff --git CMakeLists.txt CMakeLists.txt
+index 3ee50ff..357a700 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -162,7 +162,7 @@ endif()
+ # Optional 3rd party components
+ # ===================================================
+ OCV_OPTION(WITH_1394           "Include IEEE1394 support"                    ON   IF (NOT ANDROID AND NOT IOS) )
+-OCV_OPTION(WITH_AVFOUNDATION   "Use AVFoundation for Video I/O"              ON   IF IOS)
++OCV_OPTION(WITH_AVFOUNDATION   "Use AVFoundation for Video I/O"              ON   IF (APPLE OR IOS))
+ OCV_OPTION(WITH_CARBON         "Use Carbon for UI instead of Cocoa"          OFF  IF APPLE )
+ OCV_OPTION(WITH_CUDA           "Include NVidia Cuda Runtime support"         ON   IF (CMAKE_VERSION VERSION_GREATER "2.8" AND NOT IOS) )
+ OCV_OPTION(WITH_VTK            "Include VTK library support (and build opencv_viz module eiher)"             OFF IF (NOT ANDROID AND NOT IOS AND NOT CMAKE_CROSSCOMPILING) )
+diff --git cmake/OpenCVFindLibsVideo.cmake cmake/OpenCVFindLibsVideo.cmake
+index 2e09cf2..978d9de 100644
+--- cmake/OpenCVFindLibsVideo.cmake
++++ cmake/OpenCVFindLibsVideo.cmake
+@@ -316,7 +316,7 @@ if (NOT IOS)
+   if(WITH_QUICKTIME)
+     set(HAVE_QUICKTIME YES)
+   elseif(APPLE)
+-    set(HAVE_QTKIT YES)
++    set(HAVE_QTKIT NO)
+   endif()
+ endif()
+ 
+diff --git modules/highgui/CMakeLists.txt modules/highgui/CMakeLists.txt
+index b5da8d0..e4ca82b 100644
+--- modules/highgui/CMakeLists.txt
++++ modules/highgui/CMakeLists.txt
+@@ -216,7 +216,7 @@
+ 
+ if(HAVE_AVFOUNDATION)
+   list(APPEND highgui_srcs src/cap_avfoundation.mm)
+-  list(APPEND HIGHGUI_LIBRARIES "-framework AVFoundation" "-framework QuartzCore")
++  list(APPEND HIGHGUI_LIBRARIES "-framework AVFoundation" "-framework QuartzCore" "-framework CoreMedia" "-framework CoreFoundation" "-framework AppKit")
+ endif()
+ 
+ if(HAVE_QUICKTIME)
